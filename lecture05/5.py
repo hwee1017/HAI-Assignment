@@ -21,5 +21,5 @@ print(image_tensor2.dtype)
 res1 = image_tensor1 * image_tensor2
 plt.imshow(res1.permute(1,2,0))
 plt.show()
-res2 = image_tensor1.view(3,-1).matmul(image_tensor2.view(3,-1).T)
+res2 = image_tensor1.matmul(image_tensor2.permute(0,2,1))
 print(f"the matrix multiplication of image1 and image2 is \n{res2}")
